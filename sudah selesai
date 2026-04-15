@@ -1,0 +1,27 @@
+def hitung_total_harga(jumlah_barang, harga_satuan):
+    return jumlah_barang * harga_satuan
+
+
+def hitung_diskon(total_harga, tipe_diskon):
+    DISKON_MEMBER = 0.1
+    DISKON_VIP = 0.2
+
+    if tipe_diskon == "MEMBER":
+        return total_harga * DISKON_MEMBER
+    elif tipe_diskon == "VIP":
+        return total_harga * DISKON_VIP
+    else:
+        return 0
+
+
+def tampilkan_total(jumlah_barang, harga_satuan, tipe_diskon):
+    total = hitung_total_harga(jumlah_barang, harga_satuan)
+    diskon = hitung_diskon(total, tipe_diskon)
+    total_akhir = total - diskon
+
+    print("Total Harga:", total)
+    print("Diskon:", diskon)
+    print("Total Bayar:", total_akhir)
+
+
+tampilkan_total(10, 5000, "MEMBER")
